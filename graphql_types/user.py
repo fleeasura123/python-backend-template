@@ -1,6 +1,6 @@
 from graphene import Int, ObjectType, String, List, Field
 
-from .userrole import UserRoleObject
+from .user_role import UserRoleObject
 
 
 class UserObject(ObjectType):

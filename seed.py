@@ -1,7 +1,7 @@
-from connection import session
+from db.connection import session
 from sqlalchemy_models.permission import Permission
 from sqlalchemy_models.user_role import UserRole
-from sqlalchemy_models.user_role_permission import user_role_permission
+from sqlalchemy_models.user_role_permission import UserRolePermission
 
 # Create permissions
 permissions = [
@@ -21,44 +21,37 @@ permissions = [
 
 # Create roles
 roles = [
-    UserRole(
-        id=1,
-        name="admin",
-        permissions=[
-            permissions[0],
-            permissions[1],
-            permissions[2],
-            permissions[3],
-            permissions[4],
-            permissions[5],
-            permissions[6],
-            permissions[7],
-            permissions[8],
-            permissions[9],
-            permissions[10],
-            permissions[11],
-        ],
-    ),
-    UserRole(
-        id=2,
-        name="user",
-        permissions=[
-            permissions[1],
-            permissions[2],
-            permissions[3],
-            permissions[5],
-            permissions[6],
-            permissions[10],
-        ],
-    ),
+    UserRole(id=1, name="admin"),
+    UserRole(id=2, name="user"),
+    UserRole(id=3, name="guest"),
 ]
 
+# Create user_role_permission
+user_role_permissions = [
+    UserRolePermission(user_role_id=1, permission_id=1),
+    UserRolePermission(user_role_id=1, permission_id=2),
+    UserRolePermission(user_role_id=1, permission_id=3),
+    UserRolePermission(user_role_id=1, permission_id=4),
+    UserRolePermission(user_role_id=1, permission_id=5),
+    UserRolePermission(user_role_id=1, permission_id=6),
+    UserRolePermission(user_role_id=1, permission_id=7),
+    UserRolePermission(user_role_id=1, permission_id=8),
+    UserRolePermission(user_role_id=1, permission_id=9),
+    UserRolePermission(user_role_id=1, permission_id=10),
+    UserRolePermission(user_role_id=1, permission_id=11),
+    UserRolePermission(user_role_id=1, permission_id=12),
+    UserRolePermission(user_role_id=2, permission_id=2),
+    UserRolePermission(user_role_id=2, permission_id=6),
+    UserRolePermission(user_role_id=2, permission_id=10),
+]
+
+session.query(UserRolePermission).delete()
 session.query(Permission).delete()
 session.query(UserRole).delete()
-session.query(user_role_permission).delete()
 
 session.add_all(permissions)
 session.add_all(roles)
+session.add_all(user_role_permissions)
 
 session.commit()
 session.close()

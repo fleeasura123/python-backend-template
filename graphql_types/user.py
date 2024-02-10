@@ -1,4 +1,4 @@
-from graphene import Int, ObjectType, String, List, Field
+from graphene import Int, ObjectType, String, Field
 
 from .user_role import UserRoleObject
 

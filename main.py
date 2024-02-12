@@ -2,9 +2,11 @@ from graphene import Schema
 from fastapi import FastAPI
 from starlette_graphene3 import GraphQLApp, make_playground_handler
 
-from queries import Query
+from query import Query
+from mutation import Mutation
 
-schema = Schema(query=Query)
+
+schema = Schema(query=Query, mutation=Mutation)
 
 app = FastAPI()
 

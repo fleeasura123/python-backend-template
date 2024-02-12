@@ -10,7 +10,7 @@ permission_repository = PermissionRepository()
 class UserRoleObject(ObjectType):
     id = Int()
     name = String()
-    permissions = Field(List(lambda: PermissionObject))
+    permissions = List(lambda: PermissionObject)
 
     async def resolve_permissions(self, info):
         return await permission_repository.list_by_role_id(self.id)

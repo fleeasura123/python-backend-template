@@ -10,7 +10,9 @@ class PermissionRepository:
         async with get_pool().connection() as connection:
             async with connection.cursor() as cursor:
                 cursor.row_factory = class_row(Permission)
+
                 await cursor.execute("SELECT * FROM permissions")
+
                 return await cursor.fetchall()
 
     async def list_by_role_id(self, role_id: int):

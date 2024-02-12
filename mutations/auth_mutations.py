@@ -2,6 +2,8 @@ from graphene import Field, Mutation
 from graphql_inputs.auth.login import LoginInput
 from graphql_types.tokens import TokenObject
 
+from repositories.auth_repository import AuthRepository
+
 
 class Login(Mutation):
     class Arguments:
@@ -10,5 +12,5 @@ class Login(Mutation):
     tokens = Field(TokenObject)
 
     async def mutate(self, info, input: LoginInput):
-        tokens = TokenObject(access_token="12345", refresh_token="6789")
+        tokens = await AuthRepository().login(input.username, input.password)
         return Login(tokens=tokens)

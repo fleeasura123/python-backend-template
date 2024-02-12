@@ -1,7 +1,7 @@
 from psycopg.rows import class_row
 
 from connection import get_pool
-from models.permission import Permission
+from graphql_types.permission import PermissionObject
 
 
 class PermissionRepository:
@@ -9,7 +9,7 @@ class PermissionRepository:
     async def list(self):
         async with get_pool().connection() as connection:
             async with connection.cursor() as cursor:
-                cursor.row_factory = class_row(Permission)
+                cursor.row_factory = class_row(PermissionObject)
 
                 await cursor.execute("SELECT * FROM permissions")
 
@@ -18,7 +18,7 @@ class PermissionRepository:
     async def list_by_role_id(self, role_id: int):
         async with get_pool().connection() as connection:
             async with connection.cursor() as cursor:
-                cursor.row_factory = class_row(Permission)
+                cursor.row_factory = class_row(PermissionObject)
                 await cursor.execute(
                     """
                         SELECT

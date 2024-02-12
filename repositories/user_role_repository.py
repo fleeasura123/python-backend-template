@@ -1,5 +1,4 @@
 from psycopg.rows import class_row
-import asyncio
 
 from connection import get_pool
 from models.user_role import UserRole

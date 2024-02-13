@@ -235,7 +235,7 @@ mutation RefreshToken($refreshToken: String!) {
 
 If the ```refreshToken``` has expired. You need to re-login.
 
-How to get the authenticated user?
+:ledger: How to get the authenticated user?
 ---
 You can get it from the resolver or mutation context:
 

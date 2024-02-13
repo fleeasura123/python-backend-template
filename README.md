@@ -2,6 +2,34 @@
 
 This is a prototype codebase showcasing Python GraphQL functionality, leveraging FastAPI (https://pypi.org/project/fastapi/), Graphene (https://pypi.org/project/graphene/), and Psycopg3 (https://pypi.org/project/psycopg/). It includes essential features such as login, password modification, and robust authorization and authentication mechanisms.
 
+Create .env in the root folder
+```
+DB_PORT=5432
+DB_NAME=your_db_name
+DB_USER=your_db_user
+DB_PASSWORD=your_password
+TOKEN_SECRET_KEY=your_jwt_secret_key
+TOKEN_ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRATION=3600
+REFRESH_TOKEN_EXPIRATION=604800
+```
+
+Install using:
+```
+pip install -r requirements.txt
+```
+
+Run using:
+```
+uvicorn main:app --reload
+```
+
+Login using:
+```
+username: admin
+password: admin
+```
+
 # :file_folder: Folder Structure
 
 custom_decorators

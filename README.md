@@ -174,7 +174,7 @@ Users can access these resolvers and mutations by passing an ```Authorization```
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzA3ODM0MzQ0fQ.zl-Z2-OmM4ccH3YO0JJjHY1Z5Lz3PhRy1JHiiA4p16g
 ```
 
-How to get the token?
+:key: How to get the token?
 ---
 You can get the token by logging in:
 
@@ -191,7 +191,7 @@ mutation Login($username:String!, $password:String!) {
 
 After a successful login, you receive an ```accessToken``` and ```refreshToken```, which expire after a specified period of time according to your settings in ```.env```.
 
-Refresh the token
+:key: Refresh the token
 ---
 If you pass an expired ```accessToken```, you will get an error, you can check it under extensions -> isTokenExpired:
 
@@ -259,7 +259,7 @@ You can also specify multiple permissions:
 @authorize(["get_user", "get_single_user"])
 ```
 
-Custom Authorization Scenarios
+:bulb: Custom Authorization Scenarios
 ---
 
 Consider a scenario where the system has a ```branch``` and the user has a ```branch_id```.

@@ -88,7 +88,7 @@ def get_pool():
     )
 ```
 
-# Authentication
+# :closed_lock_with_key: Authentication
 
 This system uses JWT for authentication. Update the following values in your ```.env``` file:
 
@@ -100,7 +100,7 @@ REFRESH_TOKEN_EXPIRATION=604800
 ```
 Expirations are in seconds. In the example above, the access_token will expire after 1 hour, and the refresh_token will expire after 7 days.
 
-# Authorization
+# :label: Authorization
 
 To understand how authorization works, consider the database structure:
 

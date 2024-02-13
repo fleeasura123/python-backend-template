@@ -1,13 +1,12 @@
 from graphql import GraphQLError
 from psycopg.rows import class_row
-import hashlib
 import jwt
 from datetime import datetime, timedelta, timezone
 
 from connection import get_pool
 from graphql_types.user import UserType
 from graphql_types.tokens import TokenType
-from utils.global_utils import get_config
+from utils.global_utils import get_config, hash_md5
 
 
 class AuthRepository:
@@ -42,7 +41,7 @@ class AuthRepository:
                         "Invalid username or password",
                     )
 
-                if user.password != self.hash_md5(password + user.salt):
+                if user.password != hash_md5(password + user.salt):
                     raise GraphQLError("Invalid username or password")
 
                 access_token = self.create_access_token(user.id)
@@ -87,9 +86,6 @@ class AuthRepository:
             access_token=access_token,
             refresh_token=refresh_token,
         )
-
-    def hash_md5(self, input_string: str) -> str:
-        return hashlib.md5(input_string.encode()).hexdigest()
 
     def create_access_token(self, user_id: int) -> str:
         expiration = datetime.utcnow() + timedelta(

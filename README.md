@@ -140,7 +140,7 @@ id | username | password | first_name | last_name | is_active | role_id | refres
 
 role_id is a foreign key of ```user_roles``` table
 
-Explanation
+:information_source: Explanation
 ---
 Authorization works by assigning a role_id to the user. For example: assigning a role_id = 1 (Admin) grants admin permissions: can_create_user, can_update_user, can_delete_user, and can_select_user. If you assign role_id = 2 (Staff), the user has only the can_select_user permission.
 

@@ -1,6 +1,6 @@
 from graphene import Int, ObjectType, String
 
 
-class TokenObject(ObjectType):
+class TokenType(ObjectType):
     access_token = String()
     refresh_token = String()

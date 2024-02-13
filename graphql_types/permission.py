@@ -1,6 +1,6 @@
 from graphene import Int, ObjectType, String
 
 
-class PermissionObject(ObjectType):
+class PermissionType(ObjectType):
     id = Int()
     name = String()

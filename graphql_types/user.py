@@ -1,9 +1,9 @@
 from graphene import Boolean, Int, ObjectType, String, Field
 
-from .user_role import UserRoleObject
+from .user_role import UserRoleType
 
 
-class UserObject(ObjectType):
+class UserType(ObjectType):
     id = Int()
     first_name = String()
     last_name = String()
@@ -12,7 +12,7 @@ class UserObject(ObjectType):
     salt = String()
     refresh_token = String()
     role_id = Int()
-    role = Field(lambda: UserRoleObject)
+    role = Field(lambda: UserRoleType)
     is_active = Boolean()
     created_at = String()
     updated_at = String()

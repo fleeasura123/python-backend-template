@@ -144,7 +144,7 @@ Explanation
 ---
 Authorization works by assigning a role_id to the user. For example: assigning a role_id = 1 (Admin) grants admin permissions: can_create_user, can_update_user, can_delete_user, and can_select_user. If you assign role_id = 2 (Staff), the user has only the can_select_user permission.
 
-# How to use Authentication
+# :closed_lock_with_key: How to use Authentication
 
 GraphQL is based on resolvers for selecting data and mutations for creating, updating, and deleting data. Protect resolvers and mutations by importing ```authorize.py``` from the custom_decorators folder.
 
@@ -243,7 +243,7 @@ You can get it from the resolver or mutation context:
 info.context["user"]
 ```
 
-# How to use Authorization?
+# :label: How to use Authorization?
 
 Similar to authentication, use ```@authorize()``` but pass the required permission(s) like this:
 

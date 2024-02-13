@@ -61,7 +61,7 @@ utils
 ---
 Place all utility functions here; there is no strict structure.
 
-# Database Connection
+# :electric_plug: Database Connection
 
 Create a ```.env``` file in the root folder.
 

@@ -14,6 +14,11 @@ ACCESS_TOKEN_EXPIRATION=3600
 REFRESH_TOKEN_EXPIRATION=604800
 ```
 
+Import the database using the .sql file located in the migration folder:
+```
+File name: backend_db.sql
+```
+
 Install using:
 ```
 pip install -r requirements.txt

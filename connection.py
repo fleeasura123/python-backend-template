@@ -14,6 +14,5 @@ def get_connection_settings():
 def get_pool():
     return AsyncConnectionPool(
         conninfo=get_connection_settings(),
-        check=AsyncConnectionPool.check_connection,
         max_size=80,
     )

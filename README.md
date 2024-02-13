@@ -1,4 +1,4 @@
-# Python GraphQL Codebase
+# :snake: Python GraphQL Codebase
 
 This is a prototype codebase showcasing Python GraphQL functionality, leveraging FastAPI (https://pypi.org/project/fastapi/), Graphene (https://pypi.org/project/graphene/), and Psycopg3 (https://pypi.org/project/psycopg/). It includes essential features such as login, password modification, and robust authorization and authentication mechanisms.
 

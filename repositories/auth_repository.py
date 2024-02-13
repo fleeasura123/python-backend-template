@@ -34,7 +34,7 @@ class AuthRepository:
                     {"username": username},
                 )
 
-                user = await cursor.fetchone()
+                user: UserType | None = await cursor.fetchone()
 
                 if user is None:
                     raise GraphQLError(

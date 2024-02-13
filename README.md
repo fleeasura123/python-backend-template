@@ -104,7 +104,7 @@ Expirations are in seconds. In the example above, the access_token will expire a
 
 To understand how authorization works, consider the database structure:
 
-permissions table
+:orange_book: permissions table
 ---
 id | name
 
@@ -116,7 +116,7 @@ examples:
 
 in the examples above, that is based on your preference, you are free to name your own permissions. For example: can_create_user etc...
 
-user_roles table
+:orange_book: user_roles table
 ---
 id | name
 
@@ -134,7 +134,7 @@ examples:
 * ID:2 name: Staff
     * can_select_user 
 
-users table
+:orange_book: users table
 ---
 id | username | password | first_name | last_name | is_active | role_id | refresh_token | created_at | updated_at | salt | search
 
